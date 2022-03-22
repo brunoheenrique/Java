@@ -1,11 +1,9 @@
 package classesPend;
 
-public class conta {
-     private long saldo;
-    
-     long getSaldo (){
-         return saldo;
-     }
-    
-    
+public class Conta {
+   protected long saldo;
+   
+    public long getSaldo(){
+       return saldo;
+   }
 }
