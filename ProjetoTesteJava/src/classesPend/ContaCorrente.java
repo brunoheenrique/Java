@@ -2,7 +2,7 @@ package classesPend;
 
 public class ContaCorrente extends Conta {
     
-    public void depoitar(long valor){
+    public void depositar(long valor){
         
     }
     
