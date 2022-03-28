@@ -1,21 +1,9 @@
 package classesPend;
 
-class A {
-    final String n;
-    A(){
-        a();
-        n = "aprendendo";
-    }
-    void a(){
-        System.out.println("testa");
-    }
-}
-
-public class Teste extends A {
-    void a (){
-        System.out.println(n.length());
-    }
+class B { B(Teste a) {new C(); } B() { new C(this);} }
+class C { C(B b) {new B(new Teste());} C() {new B();} }
+class Teste {
     public static void main(String[] args) {
-        new Teste();
+        new C(new B(new Teste()));
     }
 }
