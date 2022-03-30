@@ -1,14 +1,27 @@
 import classesPend.*;
-public class App {
-    public static void main(String[] args) {
-        int[] i = {150, 151};
-        i = s(i);
-        System.out.println(i[1]);
-    }
-    static int[] s(int[] i) {
-        int[] j = {i[0], i[1]};
-        i[1]++;
-        return j;
+import java.io.*;
+class B {
+    void x(int i) throws IOException {
+        if(i<0) return;
+        super.x(-1);
+        System.out.println("c");
     }
 }
-
+abstract class C extends B {
+    void x(int i) throws IOException {
+        System.out.println("b");
+        super.x(i);
+    }
+}
+abstract class D extends C {
+    void x(int i) throws IOException {
+        super.x(i);
+    }
+}
+class E extends D {
+}
+public class App {
+    public static void main(String[] args) throws IOException {
+        new E().x(32);
+    }
+}
