@@ -1,17 +1,18 @@
-import java.io.*;
-
-interface Z {}
-interface W {}
-interface Y extends Z, W {}
-class B {}
-class C extends B implements Y {}
-class D extends B implements Z, W {}
-class E extends C {}
-
-public class App {
-    public static void main(String[] args) {
-       C c = (C) new B();
+abstract class B {
+    void x() {
+        System.out.println(y());
     }
-    
+    Object y() { return "a"; }
 }
-    
+abstract class C extends B {
+    abstract String y();
+}
+class D extends C {
+    String y() { return "b"; }
+}
+class A {
+    public static void main(String[] args) {
+        D d  = (D) (C) new D();
+        d.x();
+    }
+}
