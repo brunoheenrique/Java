@@ -1,36 +1,16 @@
 import java.io.*;
 
-class Conta{
-    private int id;
-    
-    protected int getId () {
-        return id;
-    }
-    
-    protected int setId (int id) {
-        this.id = id;
-        return this.id;
-    }
-   
-}  
-
-class ContaCorrente extends Conta{
-    
-    public void exibeConta () {
-        System.out.println("exibindo esta ContaCorrente");
-    }
-       
-}
+interface Z {}
+interface W {}
+interface Y extends Z, W {}
+class B {}
+class C extends B implements Y {}
+class D extends B implements Z, W {}
+class E extends C {}
 
 public class App {
     public static void main(String[] args) {
-        ContaCorrente conta = new ContaCorrente();  
-        
-        System.out.println(conta.getId());
-        
-        conta.setId(12);
-        
-        System.out.println(conta.getId());
+       C c = (C) new B();
     }
     
 }
