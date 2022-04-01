@@ -24,7 +24,7 @@ class ContaCorrente extends Conta{
 
 public class App {
     public static void main(String[] args) {
-        Conta conta = new ContaCorrente();  
+        ContaCorrente conta = new ContaCorrente();  
         
         System.out.println(conta.getId());
         
