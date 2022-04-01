@@ -3,35 +3,34 @@ import java.io.*;
 class Conta{
     private int id;
     
-    protected void abrir() {
-        System.out.println("abrindo conta");
+    protected int getId () {
+        return id;
     }
     
-    private void someu() {
-       System.out.println("este é o meu método"); 
+    protected int setId (int id) {
+        this.id = id;
+        return this.id;
     }
-    
+   
 }  
 
 class ContaCorrente extends Conta{
     
     public void exibeConta () {
-        
+        System.out.println("exibindo esta ContaCorrente");
     }
        
 }
 
 public class App {
     public static void main(String[] args) {
-        Conta conta = new ContaCorrente();
-              
-        conta.abrir();
+        Conta conta = new ContaCorrente();  
         
-        for(int i = 1;i<=10;i++){
-            System.out.println("O numero exibido no for e: " + i);
-            i +=1;
-        }
+        System.out.println(conta.getId());
         
+        conta.setId(12);
+        
+        System.out.println(conta.getId());
     }
     
 }
