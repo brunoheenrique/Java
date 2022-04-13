@@ -1,19 +1,8 @@
-abstract class B {
-    void x() {
-        System.out.println(y());
+import java.util.*;
+import models.*;
+public class App {
+    public static void main(String[]args){
+        Conta conta1 = new Conta (123,"AAA");
     }
-    Object y() { return "a"; }
+        
 }
-abstract class C extends B {
-    abstract String y();
-}
-class D extends C {
-    String y() { return "b"; }
-}
-class A {
-    public static void main(String[] args) {
-        D d  = (D) (C) new D();
-        d.x();
-    }
-}
-
