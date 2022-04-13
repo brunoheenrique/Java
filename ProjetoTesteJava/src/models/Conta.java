@@ -5,7 +5,11 @@ public class Conta {
     protected int agencia;
     protected String id;
     
-    public Conta (int agencia, String id) {
+    Conta (){
+        
+    }
+    
+    Conta (int agencia, String id) {
         this.agencia = agencia;
         this.id = id;
     }
