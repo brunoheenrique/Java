@@ -1,14 +1,22 @@
 package models;
 
 public class ContaCorrente extends Conta {
-    private int saldo = 0;
     
-    ContaCorrente(int agencia, String id){
+    public ContaCorrente(){
+        super();
+    }
+     
+    public ContaCorrente(int agencia, String id){
        super();
+       int saldo = super.saldo;
     }
     
-    int getSaldo (int valor){
-        valor = this.saldo;
-        return valor;
+    public void getSaldo (){
+        System.out.println(this.saldo);
     }
+    
+    public void setDepositar(int valor){
+        super.depositar(valor);
+    }
+    
 }
