@@ -19,4 +19,8 @@ public class ContaCorrente extends Conta {
         super.depositar(valor);
     }
     
+    public void setSacar (int valor){
+        super.sacar(valor);
+    }
+    
 }

@@ -5,14 +5,6 @@ public class Conta {
     protected int agencia;
     protected String id;
     
-    Conta (){
-        
-    }
-    
-    Conta (int agencia, String id) {
-        this.agencia = agencia;
-        this.id = id;
-    }
     protected void sacar (int valor){
         if(this.saldo < valor){
             System.out.println("saldo em conta menor do que valor solicitado para saque");

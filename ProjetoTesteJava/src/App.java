@@ -8,6 +8,12 @@ public class App {
         
         conta1.setDepositar(10);
         
+        conta1.setSacar(12);
+        
+        conta2.setDepositar(220);
+        
+        conta2.setSacar(20);
+        
         conta1.getSaldo();
         
         conta2.getSaldo();
