@@ -8,7 +8,7 @@ public class App {
         
         conta1.setDepositar(10);
         
-        conta1.setSacar(12);
+        conta1.setSacar(8);
         
         conta2.setDepositar(220);
         
@@ -17,7 +17,6 @@ public class App {
         conta1.getSaldo();
         
         conta2.getSaldo();
-
         
     }
 }
