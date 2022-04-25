@@ -15,9 +15,10 @@ public class ContaCorrente extends Conta {
         System.out.println(this.saldo);
     }
     
-    public void setDepositar(int valor){
-        super.depositar(valor);
-    }
+    public void setDepositar(){
+        int valor; 
+    }   
+    
     
     public void setSacar (int valor){
         super.sacar(valor);
