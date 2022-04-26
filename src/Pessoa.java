@@ -8,4 +8,7 @@ public class Pessoa{
         System.out.println(this.nome);
     }
     
+    protected void getIdade(){
+        System.out.println(this.idade);
+    }
 }

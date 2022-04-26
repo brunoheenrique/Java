@@ -5,5 +5,9 @@ public class Main {
         Fisica pessoa1 = new Fisica("Bruno",26,"44662308895");
         
         pessoa1.getNome();
+        pessoa1.getIdade();
+        
+        
+        
     }        
 }

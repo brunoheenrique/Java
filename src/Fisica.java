@@ -15,4 +15,9 @@ public class Fisica extends Pessoa {
         System.out.println(this.nome);
     }
     
+    @Override
+    public void getIdade(){
+        System.out.println(this.idade);
+    }
+    
 }
