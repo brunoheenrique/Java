@@ -2,6 +2,8 @@ import src.*;
 
 public class Main {
     public static void main(String[] args) {
-        Pessoa pessoa1 = new Pessoa();
+        Fisica pessoa1 = new Fisica("Bruno",26,"44662308895");
+        
+        pessoa1.getNome();
     }        
 }

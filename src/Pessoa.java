@@ -2,10 +2,9 @@ package src;
 
 public class Pessoa{
     protected String nome;
-    protected String idade;
-    protected Long CPF;
+    protected long idade;
     
-    abstract void getNome(){
+    protected void getNome(){
         System.out.println(this.nome);
     }
     
