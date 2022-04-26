@@ -6,8 +6,10 @@ public class Main {
         
         pessoa1.getNome();
         pessoa1.getIdade();
+        pessoa1.getCPF();
         
-        
+        pessoa1.fazerAniversario();
+        pessoa1.getIdade();
         
     }        
 }

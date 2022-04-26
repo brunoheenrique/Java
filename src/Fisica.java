@@ -20,4 +20,13 @@ public class Fisica extends Pessoa {
         System.out.println(this.idade);
     }
     
+    public void getCPF (){
+        System.out.println(this.CPF);
+    }
+    
+    public long fazerAniversario(){
+        this.idade+=1;
+        return this.idade;
+    }
+    
 }
