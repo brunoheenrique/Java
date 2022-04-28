@@ -1,15 +1,11 @@
 package src;
 
-public class Pessoa{
+public abstract class Pessoa{
     protected String nome;
     protected long idade;
     
-    protected void getNome(){
-        System.out.println(this.nome);
-    }
+    protected abstract void getNome();
     
-    protected void getIdade(){
-        System.out.println(this.idade);
-    }
+    protected abstract void getIdade();
     
 }
