@@ -15,13 +15,16 @@ public class ContaCorrente extends Conta {
         System.out.println(this.saldo);
     }
     
-    public void setDepositar(){
-        int valor; 
-    }   
-    
-    
-    public void setSacar (int valor){
-        super.sacar(valor);
+    @Override
+    public void sacar(int valor){
+        if(super.saldo < 0){
+            System.out.println("Valor solicitado menor do que o saldo atual");
+        }else{
+            super.saldo-=valor;
+        }
     }
     
+    @Override
+    
+  
 }
