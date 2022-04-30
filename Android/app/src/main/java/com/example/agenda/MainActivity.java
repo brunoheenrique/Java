@@ -15,9 +15,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Toast.makeText(this, "Olá Pacero!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Olá Pacero!", Toast.LENGTH_LONG).show();
         TextView aluno = new TextView(createContext(this));
-        aluno.setText("Salve Pacero");
+        aluno.setText("Hello World");
         setContentView(aluno);
 
     }
