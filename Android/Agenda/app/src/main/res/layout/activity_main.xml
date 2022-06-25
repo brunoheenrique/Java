@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:contentDescription="@string/todo"
         android:focusable="true"
         app:backgroundTint="#CDE91E36"
         app:maxImageSize="@android:dimen/notification_large_icon_height"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/ic_action_name" />
 
     <ListView
         android:id="@+id/activity_main_listaDeAlunos"
