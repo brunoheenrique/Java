@@ -10,10 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.agenda.R;
 import com.example.agenda.dao.AlunoDAO;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class ListaAlunoActivity extends AppCompatActivity {
 
     @Override
