@@ -2,4 +2,7 @@
     <string name="app_name">Agenda</string>
     <string name="nome1">Um Salve pra geral!</string>
     <string name="todo">TODO</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="email">E-mail</string>
 </resources>
