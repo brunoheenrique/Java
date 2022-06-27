@@ -25,7 +25,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
             startActivity(new Intent(ListaAlunoActivity.this,
                     FormularioAlunoActivity.class))
         );
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         AlunoDAO dao = new AlunoDAO();
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         listaDeAlunos.setAdapter(new ArrayAdapter<>(
