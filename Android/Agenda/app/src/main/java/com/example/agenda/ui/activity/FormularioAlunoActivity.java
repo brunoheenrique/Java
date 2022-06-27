@@ -1,6 +1,5 @@
 package com.example.agenda.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,8 +33,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
             Aluno alunoCriado = new Aluno(nome,telefone,email);
             dao.salvar(alunoCriado);
 
-            startActivity(new Intent(FormularioAlunoActivity.this
-                    ,ListaAlunoActivity.class));
+            finish();
 
         });
 
