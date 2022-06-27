@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/ic_action_name" />
 
     <ListView
-        android:id="@+id/activity_main_listaDeAlunos"
+        android:id="@+id/activity_lista_alunos_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
