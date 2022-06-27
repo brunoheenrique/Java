@@ -1,4 +1,4 @@
-package com.example.agenda;
+package com.example.agenda.ui.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.*;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.agenda.R;
 
 import java.util.*;
 
