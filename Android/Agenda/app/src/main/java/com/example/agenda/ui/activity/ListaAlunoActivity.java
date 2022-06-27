@@ -18,7 +18,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
-        setTitle("Lista de Alunos");
+        setTitle("Lista de alunos");
 
         FloatingActionButton botaoNovoAluno = findViewById(R.id.activity_botao_novo_aluno);
         botaoNovoAluno.setOnClickListener(view ->
