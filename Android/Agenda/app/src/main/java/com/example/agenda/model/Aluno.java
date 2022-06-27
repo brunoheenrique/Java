@@ -11,15 +11,8 @@ public class Aluno {
         this.email = email;
     }
 
-    public String getNome() {
+    @Override
+    public String toString() {
         return nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getEmail() {
-        return email;
     }
 }
