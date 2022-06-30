@@ -2,7 +2,6 @@ package com.example.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -55,8 +54,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
                 this, android.R.layout.simple_list_item_1, alunos));
         listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = alunos.get(posicao);
-            Log.i(
-                    "posicao do aluno", "" + alunoEscolhido);
+            Intent vaiParaFormularioActivity = new Intent(ListaAlunoActivity.this,
+                    FormularioAlunoActivity.class);
+            vaiParaFormularioActivity.putExtra("aluno",alunoEscolhido);
+
+            startActivity(vaiParaFormularioActivity);
         });
     }
 }
