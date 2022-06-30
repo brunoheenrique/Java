@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
+    private final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
 
     @Override
@@ -33,16 +34,19 @@ public class ListaAlunoActivity extends AppCompatActivity {
     }
 
     private void abreFormularioAlunoActivity() {
-        startActivity(new Intent(ListaAlunoActivity.this,
-                FormularioAlunoActivity.class));
+        startActivity(new Intent(this, FormularioAlunoActivity.class));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        AlunoDAO dao = new AlunoDAO();
+
+        configuraLista();
+    }
+
+    private void configuraLista() {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         listaDeAlunos.setAdapter(new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1,dao.todos()));
+                this, android.R.layout.simple_list_item_1, dao.todos()));
     }
 }
