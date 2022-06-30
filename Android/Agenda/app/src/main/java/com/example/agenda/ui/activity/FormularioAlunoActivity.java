@@ -18,6 +18,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private EditText campoNome;
     private EditText campoTelefone;
     private EditText campoEmail;
+    private Aluno aluno;
     final AlunoDAO dao = new AlunoDAO();
 
     @Override
@@ -31,18 +32,26 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         configuraBotaoSalvar();
 
         Intent dados = getIntent();
-        Aluno aluno = (Aluno) dados.getSerializableExtra("aluno");
-        campoNome.setText(aluno.getNome());
-        campoTelefone.setText(aluno.getTelefone());
-        campoEmail.setText(aluno.getEmail());
-
+        if (dados.hasExtra("aluno")){
+            Aluno aluno = (Aluno) dados.getSerializableExtra("aluno");
+            campoNome.setText(aluno.getNome());
+            campoTelefone.setText(aluno.getTelefone());
+            campoEmail.setText(aluno.getEmail());
+        }else{
+            aluno = new Aluno();
+        }
     }
 
     private void configuraBotaoSalvar() {
         Button botaosalvar = findViewById(R.id.activity_formulario_aluno_botao_salvar);
         botaosalvar.setOnClickListener(view -> {
-            Aluno alunoCriado = criaAluno();
-            salvaAluno(alunoCriado);
+            criaAluno();
+            if(aluno.temIdValido()){
+                dao.edita(aluno);
+            }else{
+                dao.salvar(aluno);
+            }
+            finish();
         });
     }
 
@@ -50,11 +59,6 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         campoNome = findViewById(R.id.activity_formulario_aluno_nome);
         campoTelefone = findViewById(R.id.activity_formulario_aluno_telefone);
         campoEmail = findViewById(R.id.activity_formulario_aluno_email);
-    }
-
-    private void salvaAluno(Aluno aluno) {
-        dao.salvar(aluno);
-        finish();
     }
 
     @NonNull

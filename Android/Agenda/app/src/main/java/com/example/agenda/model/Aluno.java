@@ -6,14 +6,18 @@ import java.io.Serializable;
 
 public class Aluno implements Serializable {
     private int id = 0;
-    private final String nome;
-    private final String telefone;
-    private final String email;
+    private  String nome;
+    private  String telefone;
+    private  String email;
 
     public Aluno(String nome, String telefone, String email) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
+    }
+
+    public Aluno() {
+
     }
 
     public String getNome() {
@@ -40,5 +44,9 @@ public class Aluno implements Serializable {
     @Override
     public String toString() {
         return nome;
+    }
+
+    public boolean temIdValido() {
+        return id > 0;
     }
 }
