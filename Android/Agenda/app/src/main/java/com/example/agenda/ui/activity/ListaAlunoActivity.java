@@ -2,6 +2,9 @@ package com.example.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -48,5 +51,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         listaDeAlunos.setAdapter(new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, dao.todos()));
+        listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
+            Log.i("posicao do aluno", "" + posicao);
+        });
     }
 }
