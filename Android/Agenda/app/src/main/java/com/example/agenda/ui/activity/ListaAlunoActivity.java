@@ -14,17 +14,27 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
+    public static final String TITULO_APPBAR = "Lista de alunos";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
-        setTitle("Lista de alunos");
+        setTitle(TITULO_APPBAR);
 
+        configuraFabNovoAluno();
+    }
+
+    private void configuraFabNovoAluno() {
         FloatingActionButton botaoNovoAluno = findViewById(R.id.activity_botao_novo_aluno);
         botaoNovoAluno.setOnClickListener(view ->
-            startActivity(new Intent(ListaAlunoActivity.this,
-                    FormularioAlunoActivity.class))
+                abreFormularioAlunoActivity()
         );
+    }
+
+    private void abreFormularioAlunoActivity() {
+        startActivity(new Intent(ListaAlunoActivity.this,
+                FormularioAlunoActivity.class));
     }
 
     @Override

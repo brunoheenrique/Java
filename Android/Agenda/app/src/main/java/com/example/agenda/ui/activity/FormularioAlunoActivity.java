@@ -13,6 +13,7 @@ import com.example.agenda.model.Aluno;
 
 public class FormularioAlunoActivity extends AppCompatActivity {
 
+    public static final String TITULO_APPBAR = "Novo Aluno";
     private EditText campoNome;
     private EditText campoTelefone;
     private EditText campoEmail;
@@ -22,7 +23,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_aluno);
-        setTitle("Novo Aluno");
+        setTitle(TITULO_APPBAR);
 
         inicializacaoDosCampos();
 
