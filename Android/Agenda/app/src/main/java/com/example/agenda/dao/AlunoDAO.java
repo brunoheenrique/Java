@@ -9,8 +9,12 @@ public class AlunoDAO {
 
     private final static List<Aluno> alunos = new ArrayList<>();
 
+    private static int contadorDeIds = 1;
+
     public void salvar(Aluno aluno) {
+        aluno.setId(contadorDeIds);
         alunos.add(aluno);
+        contadorDeIds++;
     }
 
     public List<Aluno> todos() {

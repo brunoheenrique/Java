@@ -54,7 +54,6 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
     private void salvaAluno(Aluno aluno) {
         dao.salvar(aluno);
-
         finish();
     }
 
