@@ -45,10 +45,10 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private void configuraBotaoSalvar() {
         Button botaosalvar = findViewById(R.id.activity_formulario_aluno_botao_salvar);
         botaosalvar.setOnClickListener(view -> {
-            criaAluno();
             if(aluno.temIdValido()){
                 dao.edita(aluno);
             }else{
+                aluno=criaAluno();
                 dao.salvar(aluno);
             }
             finish();
