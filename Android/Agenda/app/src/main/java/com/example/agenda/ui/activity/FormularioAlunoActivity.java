@@ -44,8 +44,8 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         campoEmail = findViewById(R.id.activity_formulario_aluno_email);
     }
 
-    private void salvaAluno(Aluno alunoCriado) {
-        dao.salvar(alunoCriado);
+    private void salvaAluno(Aluno aluno) {
+        dao.salvar(aluno);
 
         finish();
     }
