@@ -11,8 +11,6 @@ public class AlunoDAO {
 
     private int contadorDeIds = 1;
 
-    private Aluno alunoEncontrado = null;
-
     public void salvar(Aluno aluno) {
         aluno.setId(contadorDeIds);
         alunos.add(aluno);
@@ -20,8 +18,9 @@ public class AlunoDAO {
     }
 
     public void edita(Aluno aluno){
+        Aluno alunoEncontrado = null;
         for (Aluno a : alunos) {
-            if(a.getId() == aluno.getId()){
+            if (a.getId() == aluno.getId()) {
                 alunoEncontrado = a;
             }
         }

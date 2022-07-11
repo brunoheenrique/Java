@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.agenda.R;
@@ -33,7 +32,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
         Intent dados = getIntent();
         if (dados.hasExtra("aluno")){
-            Aluno aluno = (Aluno) dados.getSerializableExtra("aluno");
+            aluno = (Aluno) dados.getSerializableExtra("aluno");
             campoNome.setText(aluno.getNome());
             campoTelefone.setText(aluno.getTelefone());
             campoEmail.setText(aluno.getEmail());
@@ -45,10 +44,10 @@ public class FormularioAlunoActivity extends AppCompatActivity {
     private void configuraBotaoSalvar() {
         Button botaosalvar = findViewById(R.id.activity_formulario_aluno_botao_salvar);
         botaosalvar.setOnClickListener(view -> {
+            preencheAluno();
             if(aluno.temIdValido()){
                 dao.edita(aluno);
             }else{
-                aluno=criaAluno();
                 dao.salvar(aluno);
             }
             finish();
@@ -61,12 +60,14 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         campoEmail = findViewById(R.id.activity_formulario_aluno_email);
     }
 
-    @NonNull
-    private Aluno criaAluno() {
+    private void preencheAluno() {
         String nome = campoNome.getText().toString();
         String telefone = campoTelefone.getText().toString();
         String email = campoEmail.getText().toString();
 
-        return new Aluno(nome,telefone,email);
+        aluno.setNome(nome);
+        aluno.setEmail(email);
+        aluno.setTelefone(telefone);
+
     }
 }
