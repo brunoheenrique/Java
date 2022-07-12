@@ -2,6 +2,7 @@ package com.example.agenda.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -47,6 +48,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
             preencheAluno();
             if(aluno.temIdValido()){
                 dao.edita(aluno);
+                Log.d("OBS", "ID: " + aluno.getId());
             }else{
                 dao.salvar(aluno);
             }
