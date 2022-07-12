@@ -1,5 +1,7 @@
 package com.example.agenda.ui.activity;
 
+import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -17,7 +19,6 @@ import java.util.List;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
-    public static final String CHAVE_ALUNO = "aluno";
     private final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
 
@@ -26,7 +27,6 @@ public class ListaAlunoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
         setTitle(TITULO_APPBAR);
-
         configuraFabNovoAluno();
 
         dao.salvar(new Aluno("Bruno","123123","bruno@teste.com"));
@@ -47,7 +47,6 @@ public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         configuraLista();
     }
 
