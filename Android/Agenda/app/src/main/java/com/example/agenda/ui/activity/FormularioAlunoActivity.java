@@ -52,15 +52,17 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
     private void configuraBotaoSalvar() {
         Button botaosalvar = findViewById(R.id.activity_formulario_aluno_botao_salvar);
-        botaosalvar.setOnClickListener(view -> {
-            preencheAluno();
-            if(aluno.temIdValido()){
-                dao.edita(aluno);
-            }else{
-                dao.salvar(aluno);
-            }
-            finish();
-        });
+        botaosalvar.setOnClickListener(view -> finalizaFormulario());
+    }
+
+    private void finalizaFormulario() {
+        preencheAluno();
+        if(aluno.temIdValido()){
+            dao.edita(aluno);
+        }else{
+            dao.salvar(aluno);
+        }
+        finish();
     }
 
     private void inicializacaoDosCampos() {
