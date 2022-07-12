@@ -48,7 +48,6 @@ public class FormularioAlunoActivity extends AppCompatActivity {
             preencheAluno();
             if(aluno.temIdValido()){
                 dao.edita(aluno);
-                Log.d("OBS", "ID: " + aluno.getId());
             }else{
                 dao.salvar(aluno);
             }
