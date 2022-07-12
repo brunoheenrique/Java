@@ -54,14 +54,21 @@ public class ListaAlunoActivity extends AppCompatActivity {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         List<Aluno> alunos = dao.todos();
         configuraAdapter(listaDeAlunos, alunos);
-        listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
-            Aluno alunoEscolhido = alunos.get(posicao);
-            Intent vaiParaFormularioActivity = new Intent(ListaAlunoActivity.this,
-                    FormularioAlunoActivity.class);
-            vaiParaFormularioActivity.putExtra("aluno",alunoEscolhido);
+        configuraListenerDeCliquePorItem(listaDeAlunos);
+    }
 
-            startActivity(vaiParaFormularioActivity);
+    private void configuraListenerDeCliquePorItem(ListView listaDeAlunos) {
+        listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
+            Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
+            abreFormularioModoEditaAluno(alunoEscolhido);
         });
+    }
+
+    private void abreFormularioModoEditaAluno(Aluno aluno) {
+        Intent vaiParaFormularioActivity = new Intent(ListaAlunoActivity.this,
+                FormularioAlunoActivity.class);
+        vaiParaFormularioActivity.putExtra("aluno", aluno);
+        startActivity(vaiParaFormularioActivity);
     }
 
     private void configuraAdapter(ListView listaDeAlunos, List<Aluno> alunos) {
