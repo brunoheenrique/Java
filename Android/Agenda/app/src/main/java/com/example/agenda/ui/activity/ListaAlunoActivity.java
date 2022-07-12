@@ -58,8 +58,9 @@ public class ListaAlunoActivity extends AppCompatActivity {
         configuraListenerDeCliquePorItem(listaDeAlunos);
 
         listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
-            Log.i("clique longo", String.valueOf(posicao));
-            return false;
+            Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
+            dao.remover(alunoEscolhido);
+            return true;
         });
     }
 

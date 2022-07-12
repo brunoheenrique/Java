@@ -44,4 +44,11 @@ public class AlunoDAO {
     public List<Aluno> todos() {
         return new ArrayList<>(alunos);
     }
+
+    public void remover(Aluno aluno) {
+        Aluno alunoDevolvido = buscaAlunoPeloID(aluno);
+        if(alunoDevolvido != null){
+            alunos.remove(alunoDevolvido);
+        }
+    }
 }
