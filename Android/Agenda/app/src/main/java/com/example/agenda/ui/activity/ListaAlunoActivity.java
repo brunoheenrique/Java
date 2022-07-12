@@ -4,6 +4,7 @@ import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -55,6 +56,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
         List<Aluno> alunos = dao.todos();
         configuraAdapter(listaDeAlunos, alunos);
         configuraListenerDeCliquePorItem(listaDeAlunos);
+
+        listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
+            Log.i("clique longo", String.valueOf(posicao));
+            return false;
+        });
     }
 
     private void configuraListenerDeCliquePorItem(ListView listaDeAlunos) {
