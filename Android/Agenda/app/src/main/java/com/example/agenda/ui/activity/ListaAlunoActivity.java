@@ -53,8 +53,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void configuraLista() {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         List<Aluno> alunos = dao.todos();
-        listaDeAlunos.setAdapter(new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, alunos));
+        configuraAdapter(listaDeAlunos, alunos);
         listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = alunos.get(posicao);
             Intent vaiParaFormularioActivity = new Intent(ListaAlunoActivity.this,
@@ -63,5 +62,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
 
             startActivity(vaiParaFormularioActivity);
         });
+    }
+
+    private void configuraAdapter(ListView listaDeAlunos, List<Aluno> alunos) {
+        listaDeAlunos.setAdapter(new ArrayAdapter<>(
+                this, android.R.layout.simple_list_item_1, alunos));
     }
 }
