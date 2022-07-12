@@ -17,6 +17,7 @@ import java.util.List;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
+    public static final String CHAVE_ALUNO = "aluno";
     private final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
 
@@ -35,11 +36,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void configuraFabNovoAluno() {
         FloatingActionButton botaoNovoAluno = findViewById(R.id.activity_botao_novo_aluno);
         botaoNovoAluno.setOnClickListener(view ->
-                abreFormularioAlunoActivity()
+                abreFormularioModoInsereAluno()
         );
     }
 
-    private void abreFormularioAlunoActivity() {
+    private void abreFormularioModoInsereAluno() {
         startActivity(new Intent(this, FormularioAlunoActivity.class));
     }
 
@@ -67,7 +68,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void abreFormularioModoEditaAluno(Aluno aluno) {
         Intent vaiParaFormularioActivity = new Intent(ListaAlunoActivity.this,
                 FormularioAlunoActivity.class);
-        vaiParaFormularioActivity.putExtra("aluno", aluno);
+        vaiParaFormularioActivity.putExtra(CHAVE_ALUNO, aluno);
         startActivity(vaiParaFormularioActivity);
     }
 
