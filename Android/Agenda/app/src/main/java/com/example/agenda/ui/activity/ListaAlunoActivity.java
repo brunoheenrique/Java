@@ -4,6 +4,9 @@ import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
-    private final AlunoDAO dao = new AlunoDAO();
+    final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
     private ArrayAdapter<Aluno> adapter;
 
@@ -31,6 +34,12 @@ public class ListaAlunoActivity extends AppCompatActivity {
         configuraLista();
         dao.salvar(new Aluno("Bruno","123123","bruno@teste.com"));
         dao.salvar(new Aluno("Jebises","123123123","jefrio@teste.com"));
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add("Remover");
     }
 
     private void configuraFabNovoAluno() {
@@ -47,10 +56,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        atualizarLista();
+        atualizarAlunos();
     }
 
-    private void atualizarLista() {
+    private void atualizarAlunos() {
         adapter.clear();
         adapter.addAll(dao.todos());
     }
@@ -60,13 +69,15 @@ public class ListaAlunoActivity extends AppCompatActivity {
         configuraAdapter(listaDeAlunos);
         configuraListenerDeCliquePorItem(listaDeAlunos);
         configuraListenerDeCliqueLongoPorItem(listaDeAlunos);
+        registerForContextMenu(listaDeAlunos);
     }
 
     private void configuraListenerDeCliqueLongoPorItem(@NonNull ListView listaDeAlunos) {
         listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
             removeAlunoLista(alunoEscolhido);
-            return true;
+            Log.i("OBS", String.valueOf(alunoEscolhido.getId()));
+            return false;
         });
     }
 

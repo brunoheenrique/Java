@@ -1,5 +1,6 @@
 package com.example.agenda.dao;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.agenda.model.Aluno;
@@ -13,7 +14,7 @@ public class AlunoDAO {
 
     private int contadorDeIDs = 1;
 
-    public void salvar(Aluno aluno) {
+    public void salvar(@NonNull Aluno aluno) {
         aluno.setId(contadorDeIDs);
         alunos.add(aluno);
         incrementaID();
