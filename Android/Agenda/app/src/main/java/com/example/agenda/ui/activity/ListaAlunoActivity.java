@@ -47,6 +47,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        atualizarLista();
+    }
+
+    private void atualizarLista() {
         adapter.clear();
         adapter.addAll(dao.todos());
     }
@@ -61,10 +65,14 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void configuraListenerDeCliqueLongoPorItem(@NonNull ListView listaDeAlunos) {
         listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
-            dao.remover(alunoEscolhido);
-            adapter.remove(alunoEscolhido);
+            removeAlunoLista(alunoEscolhido);
             return true;
         });
+    }
+
+    private void removeAlunoLista(Aluno aluno) {
+        dao.remover(aluno);
+        adapter.remove(aluno);
     }
 
     private void configuraListenerDeCliquePorItem(@NonNull ListView listaDeAlunos) {
