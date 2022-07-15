@@ -4,7 +4,6 @@ import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,6 +21,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
 
     private final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
+    private ArrayAdapter<Aluno> adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
         listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
             dao.remover(alunoEscolhido);
+            adapter.remove(alunoEscolhido);
             return true;
         });
     }
@@ -79,7 +80,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(ListView listaDeAlunos, List<Aluno> alunos) {
-        listaDeAlunos.setAdapter(new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, alunos));
+        adapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_list_item_1, alunos);
+        listaDeAlunos.setAdapter(adapter);
     }
 }
