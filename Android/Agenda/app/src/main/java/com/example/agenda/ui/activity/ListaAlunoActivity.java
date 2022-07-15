@@ -29,7 +29,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_alunos);
         setTitle(TITULO_APPBAR);
         configuraFabNovoAluno();
-
+        configuraLista();
         dao.salvar(new Aluno("Bruno","123123","bruno@teste.com"));
         dao.salvar(new Aluno("Jebises","123123123","jefrio@teste.com"));
     }
@@ -48,7 +48,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        configuraLista();
+        adapter.clear();
+        adapter.addAll(dao.todos());
     }
 
     private void configuraLista() {
