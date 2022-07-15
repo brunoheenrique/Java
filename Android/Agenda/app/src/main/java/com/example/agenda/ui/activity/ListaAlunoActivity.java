@@ -32,8 +32,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
         configuraFabNovoAluno();
         configuraLista();
+        /*
         dao.salvar(new Aluno("Bruno","123123","bruno@teste.com"));
-        dao.salvar(new Aluno("Jebises","123123123","jefrio@teste.com"));
+         dao.salvar(new Aluno("Jebises","123123123","jefrio@teste.com"));
+        */
     }
 
     @Override
@@ -75,8 +77,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void configuraListenerDeCliqueLongoPorItem(@NonNull ListView listaDeAlunos) {
         listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
             Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
-            removeAlunoLista(alunoEscolhido);
-            Log.i("OBS", String.valueOf(alunoEscolhido.getId()));
+            //removeAlunoLista(alunoEscolhido);
+            Log.i("OBS", alunoEscolhido.getId() + " " + dao.contadorDeIDs + " " + posicao);
             return false;
         });
     }
