@@ -69,7 +69,6 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void configuraLista() {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         configuraAdapter(listaDeAlunos);
-        configuraListenerDeCliquePorItem(listaDeAlunos);
         registerForContextMenu(listaDeAlunos);
     }
 
@@ -80,6 +79,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
             Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
             removeAlunoLista(alunoEscolhido);
+        }else if(tituloDoMenu.equals("Editar")){
+            AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
+            Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
+            abreFormularioModoEditaAluno(alunoEscolhido);
         }
         return super.onContextItemSelected(item);
     }
@@ -87,13 +90,6 @@ public class ListaAlunoActivity extends AppCompatActivity {
     private void removeAlunoLista(Aluno aluno) {
         dao.remover(aluno);
         adapter.remove(aluno);
-    }
-
-    private void configuraListenerDeCliquePorItem(@NonNull ListView listaDeAlunos) {
-        listaDeAlunos.setOnItemClickListener((adapterView, view, posicao, id) -> {
-            Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
-            abreFormularioModoEditaAluno(alunoEscolhido);
-        });
     }
 
     private void abreFormularioModoEditaAluno(Aluno aluno) {
