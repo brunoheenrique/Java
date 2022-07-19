@@ -12,7 +12,7 @@ public class AlunoDAO {
 
     private final static List<Aluno> alunos = new ArrayList<>();
 
-    public int contadorDeIDs = 1;
+    private static int contadorDeIDs = 1;
 
     public void salvar(@NonNull Aluno aluno) {
         aluno.setId(contadorDeIDs);
