@@ -75,9 +75,12 @@ public class ListaAlunoActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
-        Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
-        removeAlunoLista(alunoEscolhido);
+        CharSequence tituloDoMenu = item.getTitle();
+        if(tituloDoMenu.equals("Remover")){
+            AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
+            Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
+            removeAlunoLista(alunoEscolhido);
+        }
         return super.onContextItemSelected(item);
     }
 
