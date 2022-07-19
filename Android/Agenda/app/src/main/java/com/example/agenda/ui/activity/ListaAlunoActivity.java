@@ -1,6 +1,6 @@
 package com.example.agenda.ui.activity;
 
-import static android.widget.AdapterView.*;
+import static android.widget.AdapterView.AdapterContextMenuInfo;
 import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
