@@ -1,11 +1,14 @@
 package com.example.agenda.ui.activity;
 
+import static android.widget.AdapterView.*;
 import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -68,16 +71,15 @@ public class ListaAlunoActivity extends AppCompatActivity {
         ListView listaDeAlunos = findViewById(R.id.activity_lista_alunos_listview);
         configuraAdapter(listaDeAlunos);
         configuraListenerDeCliquePorItem(listaDeAlunos);
-        configuraListenerDeCliqueLongoPorItem(listaDeAlunos);
         registerForContextMenu(listaDeAlunos);
     }
 
-    private void configuraListenerDeCliqueLongoPorItem(@NonNull ListView listaDeAlunos) {
-        listaDeAlunos.setOnItemLongClickListener((adapterView, view, posicao, id) -> {
-            Aluno alunoEscolhido = (Aluno) adapterView.getItemAtPosition(posicao);
-            removeAlunoLista(alunoEscolhido);
-            return false;
-        });
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
+        Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
+        removeAlunoLista(alunoEscolhido);
+        return super.onContextItemSelected(item);
     }
 
     private void removeAlunoLista(Aluno aluno) {
