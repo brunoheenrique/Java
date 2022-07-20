@@ -2,7 +2,11 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title= "@string/remover" />
-    <item android:title= "@string/editar" />
+    <item
+        android:id="activity_lista_alunos_menu_remover"
+        android:title= "@string/remover" />
+    <item
+        android:id="activity_lista_alunos_menu_editar"
+        android:title= "@string/editar" />
 
 </menu>
