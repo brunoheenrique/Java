@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="activity_lista_alunos_menu_remover"
+    <item android:id="@+id/activity_lista_alunos_menu_remover"
         android:title= "@string/remover" />
-    <item
-        android:id="activity_lista_alunos_menu_editar"
+    <item android:id="@+id/activity_lista_alunos_menu_editar"
         android:title= "@string/editar" />
 
 </menu>
+
+<!--"xmlns:app="http://schemas.android.com/apk/res-auto"

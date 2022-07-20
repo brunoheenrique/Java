@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dev/Java/Android/Agenda/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.1" />
         <entry key="..\:/Dev/Java/Android/Agenda/app/src/main/res/layout/activity_formulario_aluno.xml" value="0.22" />
         <entry key="..\:/Dev/Java/Android/Agenda/app/src/main/res/layout/activity_lista_alunos.xml" value="0.1796875" />
         <entry key="..\:/Dev/Java/Android/Agenda/app/src/main/res/layout/activity_main.xml" value="0.22" />

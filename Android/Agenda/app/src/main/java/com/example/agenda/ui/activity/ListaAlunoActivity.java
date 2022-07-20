@@ -75,12 +75,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-        CharSequence tituloDoMenu = item.getTitle();
-        if(itemId == R.id.activity_lista_alun){
+        if(itemId == R.id.activity_lista_alunos_menu_remover){
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
             Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
             removeAlunoLista(alunoEscolhido);
-        }else if(tituloDoMenu.equals("Editar")){
+        }else if(itemId == R.id.activity_lista_alunos_menu_editar){
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
             Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
             abreFormularioModoEditaAluno(alunoEscolhido);
