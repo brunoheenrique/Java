@@ -39,6 +39,141 @@
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:autofillHints="name"
+            android:hint="@string/teste"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
         <Button
             android:id="@+id/activity_formulario_aluno_botao_salvar"
             android:layout_width="match_parent"
