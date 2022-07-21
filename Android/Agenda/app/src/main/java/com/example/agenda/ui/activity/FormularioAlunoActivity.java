@@ -4,9 +4,12 @@ import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.agenda.R;
@@ -30,6 +33,18 @@ public class FormularioAlunoActivity extends AppCompatActivity {
         inicializacaoDosCampos();
         configuraBotaoSalvar();
         carregaAluno();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_formulario_aluno_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        finalizaFormulario();
+        return super.onOptionsItemSelected(item);
     }
 
     private void carregaAluno() {
