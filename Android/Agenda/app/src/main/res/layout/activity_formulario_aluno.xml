@@ -48,14 +48,6 @@
             android:inputType="text"
             android:minHeight="48dp" />
 
-        <Button
-            android:id="@+id/activity_formulario_aluno_botao_salvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:backgroundTint="@color/teal_700"
-            android:text="@string/salvar" />
-
     </LinearLayout>
 
 </ScrollView>
