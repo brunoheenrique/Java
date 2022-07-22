@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -42,7 +41,10 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        finalizaFormulario();
+        int itemId = item.getItemId();
+        if(itemId == R.id.activity_formulario_aluno_menu_salvar){
+            finalizaFormulario();
+        }
         return super.onOptionsItemSelected(item);
     }
 
