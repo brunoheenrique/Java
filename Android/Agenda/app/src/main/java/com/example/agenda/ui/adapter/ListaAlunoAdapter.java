@@ -41,13 +41,21 @@ public class ListaAlunoAdapter extends BaseAdapter {
     @SuppressLint("ViewHolder")
     @Override
     public View getView(int posicao, View view, ViewGroup viewGroup) {
-        View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_aluno, viewGroup,false);
+        View viewCriada = criaView(viewGroup);
         Aluno alunoDevolvido = alunos.get(posicao);
+        vinculaInfos(viewCriada, alunoDevolvido);
+        return viewCriada;
+    }
+
+    private void vinculaInfos(View viewCriada, Aluno alunoDevolvido) {
         TextView nome = viewCriada.findViewById(R.id.item_aluno_nome);
         nome.setText(alunoDevolvido.getNome());
         TextView telefone = viewCriada.findViewById(R.id.item_aluno_telefone);
         telefone.setText(alunoDevolvido.getTelefone());
-        return viewCriada;
+    }
+
+    private View criaView(ViewGroup viewGroup) {
+        return LayoutInflater.from(context).inflate(R.layout.item_aluno, viewGroup,false);
     }
 
     public void clear() {
