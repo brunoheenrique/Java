@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -18,13 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.agenda.R;
 import com.example.agenda.dao.AlunoDAO;
 import com.example.agenda.model.Aluno;
+import com.example.agenda.ui.adapter.ListaAlunoAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ListaAlunoActivity extends AppCompatActivity {
 
     final AlunoDAO dao = new AlunoDAO();
     public static final String TITULO_APPBAR = "Lista de alunos";
-    private ArrayAdapter<Aluno> adapter;
+    private ListaAlunoAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,11 +77,11 @@ public class ListaAlunoActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         if(itemId == R.id.activity_lista_alunos_menu_remover){
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
-            Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
+            Aluno alunoEscolhido = (Aluno) adapter.getItem(menuInfo.position);
             removeAlunoLista(alunoEscolhido);
         }else if(itemId == R.id.activity_lista_alunos_menu_editar){
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
-            Aluno alunoEscolhido = adapter.getItem(menuInfo.position);
+            Aluno alunoEscolhido = (Aluno) adapter.getItem(menuInfo.position);
             abreFormularioModoEditaAluno(alunoEscolhido);
         }
         return super.onContextItemSelected(item);
@@ -100,8 +100,7 @@ public class ListaAlunoActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(@NonNull ListView listaDeAlunos) {
-        adapter = new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1);
+        adapter = new ListaAlunoAdapter(this);
         listaDeAlunos.setAdapter(adapter);
     }
 }
