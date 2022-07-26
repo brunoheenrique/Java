@@ -40,7 +40,7 @@ public class ListaAlunoAdapter extends BaseAdapter {
     @SuppressLint("ViewHolder")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return LayoutInflater.from(context).inflate(R.layout.item_aluno, viewGroup);
+        return LayoutInflater.from(context).inflate(R.layout.item_aluno, viewGroup,false);
     }
 
     public void clear() {
