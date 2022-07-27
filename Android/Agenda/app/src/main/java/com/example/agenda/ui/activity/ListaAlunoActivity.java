@@ -3,6 +3,7 @@ package com.example.agenda.ui.activity;
 import static android.widget.AdapterView.AdapterContextMenuInfo;
 import static com.example.agenda.ui.activity.ConstantActivities.CHAVE_ALUNO;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -33,6 +34,12 @@ public class ListaAlunoActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
         configuraFabNovoAluno();
         configuraLista();
+        new AlertDialog
+                .Builder(this)
+                .setTitle("Removendo Aluno")
+                .setMessage("Tem certeza que deseja remover?")
+                .setPositiveButton("Sim",null)
+                .setNegativeButton("Não",null);
     }
 
     @Override
