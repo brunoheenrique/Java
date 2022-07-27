@@ -70,26 +70,30 @@ public class ListaAlunoActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onContextItemSelected(@NonNull final MenuItem item) {
+    public boolean onContextItemSelected(@NonNull  MenuItem item) {
         int itemId = item.getItemId();
         if(itemId == R.id.activity_lista_alunos_menu_remover){
-            new AlertDialog
-                    .Builder(this)
-                    .setTitle("Removendo Aluno")
-                    .setMessage("Tem certeza que deseja remover?")
-                    .setPositiveButton("Sim", (dialogInterface,i) -> {
-                        AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
-                        Aluno alunoEscolhido = (Aluno) adapter.getItem(menuInfo.position);
-                        removeAlunoLista(alunoEscolhido);
-                    })
-                    .setNegativeButton("Não",null)
-                    .show();
+            confirmaRemocao(item);
         }else if(itemId == R.id.activity_lista_alunos_menu_editar){
             AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
             Aluno alunoEscolhido = (Aluno) adapter.getItem(menuInfo.position);
             abreFormularioModoEditaAluno(alunoEscolhido);
         }
         return super.onContextItemSelected(item);
+    }
+
+    private void confirmaRemocao(@NonNull final MenuItem item) {
+        new AlertDialog
+                .Builder(this)
+                .setTitle("Removendo Aluno")
+                .setMessage("Tem certeza que deseja remover?")
+                .setPositiveButton("Sim", (dialogInterface,i) -> {
+                    AdapterContextMenuInfo menuInfo = (AdapterContextMenuInfo) item.getMenuInfo();
+                    Aluno alunoEscolhido = (Aluno) adapter.getItem(menuInfo.position);
+                    removeAlunoLista(alunoEscolhido);
+                })
+                .setNegativeButton("Não",null)
+                .show();
     }
 
     private void removeAlunoLista(Aluno aluno) {
