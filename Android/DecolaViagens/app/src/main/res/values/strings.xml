@@ -6,4 +6,8 @@
     <string name="fundo_layout">""</string>
     <string name="imagem_pacote">""</string>
     <string name="item_lista_pacotes_1">São Paulo</string>
+    <string name="item_lista_pacotes_2">Belo Horizonte</string>
+    <string name="item_lista_pacotes_3">Fortaleza</string>
+    <string name="item_lista_dias_1">2 dias</string>
+    <string name="item_lista_preco_1">R$ 243,99</string>
 </resources>
