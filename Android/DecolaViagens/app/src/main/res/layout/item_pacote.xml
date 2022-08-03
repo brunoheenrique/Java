@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:contentDescription="@string/imagem_pacote"
+        android:id="@+id/item_imagem_pacote"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:src="@drawable/sao_paulo_sp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/item_texto_pacote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/translucent_black"
+        android:padding="8dp"
+        android:text="@string/item_lista_pacotes_1"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/item_imagem_pacote"
+        app:layout_constraintEnd_toEndOf="@id/item_imagem_pacote"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/item_imagem_pacote"
+        app:layout_constraintTop_toTopOf="@id/item_imagem_pacote"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

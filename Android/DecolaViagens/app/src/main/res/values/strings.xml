@@ -4,4 +4,6 @@
     <string name="stringTextview1">Especiais</string>
     <string name="stringTextview2">Brasil</string>
     <string name="fundo_layout">""</string>
+    <string name="imagem_pacote">""</string>
+    <string name="item_lista_pacotes_1">São Paulo</string>
 </resources>
