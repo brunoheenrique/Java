@@ -3,4 +3,5 @@
     <string name="pacote_activity">Pacotes</string>
     <string name="stringTextview1">Especiais</string>
     <string name="stringTextview2">Brasil</string>
+    <string name="fundo_layout">""</string>
 </resources>
