@@ -14,10 +14,13 @@ import java.util.List;
 
 public class ListaPacotesActivity extends AppCompatActivity {
 
+    private static final String TITULOAPPBAR = "Pacotes";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pacotes);
+        setTitle(TITULOAPPBAR);
         ListView listaDePacotes = findViewById(R.id.lista_pacotes_listview);
         List<Pacote> pacotes = new PacoteDAO().lista();
         listaDePacotes.setAdapter(new ListaPacotesAdapter(pacotes,this));
