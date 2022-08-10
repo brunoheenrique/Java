@@ -11,8 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
+import com.example.decolaviagens.DiasUtil;
 import com.example.decolaviagens.MoedaUtil;
 import com.example.decolaviagens.R;
 import com.example.decolaviagens.model.Pacote;
@@ -67,21 +66,11 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private void mostraDias(View viewCriada, Pacote pacote) {
         TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
-        String diasEmTexto = formataDiasEmTexto(pacote);
+        String diasEmTexto = DiasUtil.formataDiasEmTexto(pacote.getDias());
         dias.setText(diasEmTexto);
     }
 
-    @NonNull
-    private String formataDiasEmTexto(Pacote pacote) {
-        String diasEmTexto;
-        int qtdeDias = pacote.getDias();
-        if (qtdeDias > 1){
-            diasEmTexto = qtdeDias + " dias";
-        }else{
-            diasEmTexto = qtdeDias + " dia" ;
-        }
-        return diasEmTexto;
-    }
+
 
     private void mostraImagem(View viewCriada, Pacote pacote) {
         ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
