@@ -11,6 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.example.decolaviagens.R;
 import com.example.decolaviagens.model.Pacote;
 
@@ -47,7 +49,9 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int posicao, View view, ViewGroup parent) {
-        @SuppressLint("ViewHolder") View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
+        @SuppressLint("ViewHolder") View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote,
+                parent, false);
+
         Pacote pacote = getItem(posicao);
 
         mostraLocal(viewCriada, pacote);
@@ -60,16 +64,27 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private void mostraPreco(View viewCriada, Pacote pacote) {
         TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
+        String precoFinal = formataPreco(pacote);
+        preco.setText(precoFinal);
+    }
+
+    @NonNull
+    private String formataPreco(Pacote pacote) {
         BigDecimal valorPacote = pacote.getPreco();
         NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
-        String precoFinal = formatoBR
+        return formatoBR
                 .format(valorPacote)
                 .replace("R$","R$ ");
-        preco.setText(precoFinal);
     }
 
     private void mostraDias(View viewCriada, Pacote pacote) {
         TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
+        String diasEmTexto = formataDiasEmTexto(pacote);
+        dias.setText(diasEmTexto);
+    }
+
+    @NonNull
+    private String formataDiasEmTexto(Pacote pacote) {
         String diasEmTexto;
         int qtdeDias = pacote.getDias();
         if (qtdeDias > 1){
@@ -77,7 +92,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
         }else{
             diasEmTexto = qtdeDias + " dia" ;
         }
-        dias.setText(diasEmTexto);
+        return diasEmTexto;
     }
 
     private void mostraImagem(View viewCriada, Pacote pacote) {
