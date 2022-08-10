@@ -1,5 +1,6 @@
 package com.example.decolaviagens.ui.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -11,10 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.decolaviagens.R;
-import com.example.decolaviagens.dao.PacoteDAO;
 import com.example.decolaviagens.model.Pacote;
-
-import org.w3c.dom.Text;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -30,7 +28,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
     public ListaPacotesAdapter(List<Pacote> pacotes,Context context){
         this.pacotes = pacotes;
         this.context = context;
-    };
+    }
 
     @Override
     public int getCount() {
@@ -49,28 +47,18 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int posicao, View view, ViewGroup parent) {
-        View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
-        Pacote pacote = pacotes.get(posicao);
+        @SuppressLint("ViewHolder") View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
+        Pacote pacote = getItem(posicao);
 
-        TextView local= viewCriada.findViewById(R.id.item_local_pacote_1);
-        local.setText(pacote.getLocal());
+        mostraLocal(viewCriada, pacote);
+        mostraImagem(viewCriada, pacote);
+        mostraDias(viewCriada, pacote);
+        mostraPreco(viewCriada, pacote);
 
-        ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
-        Resources resources = context.getResources();
-        int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
-        Drawable drawableImagemPacote = resources.getDrawable(idDoDrawable);
-        imagem.setImageDrawable(drawableImagemPacote);
+        return viewCriada;
+    }
 
-        TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
-        String diasEmTexto="";
-        int qtdeDias = pacote.getDias();
-        if (qtdeDias > 1){
-            diasEmTexto = qtdeDias + " dias";
-        }else{
-            diasEmTexto = qtdeDias + " dia" ;
-        }
-        dias.setText(diasEmTexto);
-
+    private void mostraPreco(View viewCriada, Pacote pacote) {
         TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
         BigDecimal valorPacote = pacote.getPreco();
         NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
@@ -78,7 +66,35 @@ public class ListaPacotesAdapter extends BaseAdapter {
                 .format(valorPacote)
                 .replace("R$","R$ ");
         preco.setText(precoFinal);
+    }
 
-        return viewCriada;
+    private void mostraDias(View viewCriada, Pacote pacote) {
+        TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
+        String diasEmTexto;
+        int qtdeDias = pacote.getDias();
+        if (qtdeDias > 1){
+            diasEmTexto = qtdeDias + " dias";
+        }else{
+            diasEmTexto = qtdeDias + " dia" ;
+        }
+        dias.setText(diasEmTexto);
+    }
+
+    private void mostraImagem(View viewCriada, Pacote pacote) {
+        ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
+        Drawable drawableImagemPacote = devolveDrawable(pacote);
+        imagem.setImageDrawable(drawableImagemPacote);
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private Drawable devolveDrawable(Pacote pacote) {
+        Resources resources = context.getResources();
+        int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
+        return resources.getDrawable(idDoDrawable);
+    }
+
+    private void mostraLocal(View viewCriada, Pacote pacote) {
+        TextView local= viewCriada.findViewById(R.id.item_local_pacote_1);
+        local.setText(pacote.getLocal());
     }
 }
