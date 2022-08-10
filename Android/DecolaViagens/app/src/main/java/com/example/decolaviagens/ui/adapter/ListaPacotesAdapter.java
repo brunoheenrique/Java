@@ -74,7 +74,9 @@ public class ListaPacotesAdapter extends BaseAdapter {
         TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
         BigDecimal valorPacote = pacote.getPreco();
         NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
-        String precoFinal = formatoBR.format(valorPacote);
+        String precoFinal = formatoBR
+                .format(valorPacote)
+                .replace("R$","R$ ");
         preco.setText(precoFinal);
 
         return viewCriada;
