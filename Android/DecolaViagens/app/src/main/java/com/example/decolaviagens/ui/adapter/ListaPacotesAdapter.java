@@ -1,10 +1,14 @@
 package com.example.decolaviagens.ui.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.decolaviagens.R;
 import com.example.decolaviagens.dao.PacoteDAO;
@@ -14,8 +18,8 @@ import java.util.List;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
-    private List<Pacote> pacotes;
-    private Context context;
+    private final List<Pacote> pacotes;
+    private final Context context;
 
     public ListaPacotesAdapter(List<Pacote> pacotes,Context context){
         this.pacotes = pacotes;
@@ -39,9 +43,15 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int posicao, View view, ViewGroup parent) {
-        final View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
-
+        View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
         Pacote pacote = pacotes.get(posicao);
+        TextView local= viewCriada.findViewById(R.id.item_local_pacote_1);
+        local.setText(pacote.getLocal());
+        ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
+        Resources resources = context.getResources();
+        int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
+        Drawable drawableImagemPacote = resources.getDrawable(idDoDrawable);
+        imagem.setImageDrawable(drawableImagemPacote);
 
         return viewCriada;
     }
