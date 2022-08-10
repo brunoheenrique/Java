@@ -7,13 +7,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.example.decolaviagens.R;
+import com.example.decolaviagens.dao.PacoteDAO;
 import com.example.decolaviagens.model.Pacote;
 
 import java.util.List;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
-    private final List<Pacote> pacotes;
+    private List<Pacote> pacotes;
     private Context context;
 
     public ListaPacotesAdapter(List<Pacote> pacotes,Context context){
@@ -39,6 +40,9 @@ public class ListaPacotesAdapter extends BaseAdapter {
     @Override
     public View getView(int posicao, View view, ViewGroup parent) {
         final View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
+
+        Pacote pacote = pacotes.get(posicao);
+
         return viewCriada;
     }
 }

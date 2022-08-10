@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.decolaviagens.R;
+import com.example.decolaviagens.dao.PacoteDAO;
+import com.example.decolaviagens.model.Pacote;
 import com.example.decolaviagens.ui.adapter.ListaPacotesAdapter;
+
+import java.util.List;
 
 public class ListaPacotesActivity extends AppCompatActivity {
 
@@ -15,7 +19,8 @@ public class ListaPacotesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_pacotes);
         ListView listaDePacotes = findViewById(R.id.lista_pacotes_listview);
-        listaDePacotes.setAdapter(new ListaPacotesAdapter());
+        List<Pacote> pacotes = new PacoteDAO().lista();
+        listaDePacotes.setAdapter(new ListaPacotesAdapter(pacotes,this));
     }
 
 
