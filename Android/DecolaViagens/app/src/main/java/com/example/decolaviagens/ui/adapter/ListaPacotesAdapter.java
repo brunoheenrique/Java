@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.decolaviagens.DiasUtil;
 import com.example.decolaviagens.MoedaUtil;
 import com.example.decolaviagens.R;
+import com.example.decolaviagens.ResourceUtil;
 import com.example.decolaviagens.model.Pacote;
 
 import java.util.List;
@@ -66,23 +67,14 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private void mostraDias(View viewCriada, Pacote pacote) {
         TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
-        String diasEmTexto = DiasUtil.formataDiasEmTexto(pacote.getDias());
+        String diasEmTexto = DiasUtil.formataEmTexto(pacote.getDias());
         dias.setText(diasEmTexto);
     }
 
-
-
     private void mostraImagem(View viewCriada, Pacote pacote) {
         ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
-        Drawable drawableImagemPacote = devolveDrawable(pacote);
+        Drawable drawableImagemPacote = ResourceUtil.devolveDrawable(context,pacote.getImagem());
         imagem.setImageDrawable(drawableImagemPacote);
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    private Drawable devolveDrawable(Pacote pacote) {
-        Resources resources = context.getResources();
-        int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
-        return resources.getDrawable(idDoDrawable);
     }
 
     private void mostraLocal(View viewCriada, Pacote pacote) {

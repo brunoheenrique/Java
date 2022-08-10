@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 
 public class DiasUtil {
 
+    public static final String PLURAL = " dias";
+    public static final String SINGULAR = " dia";
+
     @NonNull
-    public static String formataDiasEmTexto(int qtdeDias) {
+    public static String formataEmTexto(int qtdeDias) {
         if (qtdeDias > 1){
-            return qtdeDias + " dias";
+            return qtdeDias + PLURAL;
         }
-        return  qtdeDias + " dia" ;
+        return  qtdeDias + SINGULAR;
     }
 }
