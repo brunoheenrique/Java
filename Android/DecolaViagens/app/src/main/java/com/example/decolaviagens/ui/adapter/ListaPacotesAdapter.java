@@ -13,14 +13,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.decolaviagens.MoedaUtil;
 import com.example.decolaviagens.R;
 import com.example.decolaviagens.model.Pacote;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
@@ -64,17 +61,8 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private void mostraPreco(View viewCriada, Pacote pacote) {
         TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
-        String precoFinal = formataPreco(pacote);
+        String precoFinal = MoedaUtil.formataPreco(pacote.getPreco());
         preco.setText(precoFinal);
-    }
-
-    @NonNull
-    private String formataPreco(Pacote pacote) {
-        BigDecimal valorPacote = pacote.getPreco();
-        NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
-        return formatoBR
-                .format(valorPacote)
-                .replace("R$","R$ ");
     }
 
     private void mostraDias(View viewCriada, Pacote pacote) {
