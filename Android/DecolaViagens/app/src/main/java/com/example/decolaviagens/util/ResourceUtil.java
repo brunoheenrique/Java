@@ -1,4 +1,4 @@
-package com.example.decolaviagens;
+package com.example.decolaviagens.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

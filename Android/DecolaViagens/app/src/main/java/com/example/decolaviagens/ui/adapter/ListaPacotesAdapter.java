@@ -2,7 +2,6 @@ package com.example.decolaviagens.ui.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +10,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.decolaviagens.DiasUtil;
-import com.example.decolaviagens.MoedaUtil;
+import com.example.decolaviagens.util.DiasUtil;
+import com.example.decolaviagens.util.MoedaUtil;
 import com.example.decolaviagens.R;
-import com.example.decolaviagens.ResourceUtil;
+import com.example.decolaviagens.util.ResourceUtil;
 import com.example.decolaviagens.model.Pacote;
 
 import java.util.List;
