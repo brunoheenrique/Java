@@ -14,6 +14,8 @@ import com.example.decolaviagens.R;
 import com.example.decolaviagens.dao.PacoteDAO;
 import com.example.decolaviagens.model.Pacote;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class ListaPacotesAdapter extends BaseAdapter {
@@ -52,6 +54,10 @@ public class ListaPacotesAdapter extends BaseAdapter {
         int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
         Drawable drawableImagemPacote = resources.getDrawable(idDoDrawable);
         imagem.setImageDrawable(drawableImagemPacote);
+        TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
+        dias.setText(pacote.getDias() + "dias");
+        TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
+        preco.setText(pacote.getPreco().toString());
 
         return viewCriada;
     }
