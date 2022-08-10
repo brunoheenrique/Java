@@ -16,7 +16,11 @@ import com.example.decolaviagens.model.Pacote;
 
 import org.w3c.dom.Text;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ListaPacotesAdapter extends BaseAdapter {
 
@@ -47,17 +51,31 @@ public class ListaPacotesAdapter extends BaseAdapter {
     public View getView(int posicao, View view, ViewGroup parent) {
         View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_pacote, parent, false);
         Pacote pacote = pacotes.get(posicao);
+
         TextView local= viewCriada.findViewById(R.id.item_local_pacote_1);
         local.setText(pacote.getLocal());
+
         ImageView imagem = viewCriada.findViewById(R.id.item_imagem_pacote_1);
         Resources resources = context.getResources();
         int idDoDrawable = resources.getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
         Drawable drawableImagemPacote = resources.getDrawable(idDoDrawable);
         imagem.setImageDrawable(drawableImagemPacote);
+
         TextView dias = viewCriada.findViewById(R.id.item_dias_pacote_1);
-        dias.setText(pacote.getDias() + " Dias");
+        String diasEmTexto="";
+        int qtdeDias = pacote.getDias();
+        if (qtdeDias > 1){
+            diasEmTexto = qtdeDias + " dias";
+        }else{
+            diasEmTexto = qtdeDias + " dia" ;
+        }
+        dias.setText(diasEmTexto);
+
         TextView preco = viewCriada.findViewById(R.id.item_preco_pacote_1);
-        preco.setText(pacote.getPreco().toString());
+        BigDecimal valorPacote = pacote.getPreco();
+        NumberFormat formatoBR = DecimalFormat.getCurrencyInstance(new Locale("pt", "br"));
+        String precoFinal = formatoBR.format(valorPacote);
+        preco.setText(precoFinal);
 
         return viewCriada;
     }
