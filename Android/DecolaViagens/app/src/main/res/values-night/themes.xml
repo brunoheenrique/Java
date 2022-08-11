@@ -15,7 +15,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarStyle">@style/MeuAppActionBar</item>q
+        <item name="actionBarStyle">@style/MeuAppActionBar</item>
     </style>
 
     <style name="MeuAppActionBar" parent="@style/Widget.AppCompat.ActionBar">
