@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:contentDescription="@string/fundo_layout"
-        android:tint="@color/purple_700"
+        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
