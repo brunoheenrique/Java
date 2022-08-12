@@ -26,7 +26,7 @@
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/string_teste_1"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resumo_pacote_imageview" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/string_teste_2"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resumo_local_textview" />
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/string_teste_3"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resumo_dias_textview" />
 
@@ -57,22 +57,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/string_teste_4"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toTopOf="@id/resumo_preco_final_textview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resumo_pacote_imageview" />
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/resumo_valor_final_textview"
+        app:layout_constraintEnd_toEndOf="@+id/resumo_valor_final_textview" />
 
     <TextView
         android:id="@+id/resumo_valor_final_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
- android:layout_margin="8dp"
+        android:layout_margin="8dp"
         android:text="@string/string_teste_5"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resumo_preco_final_textview"
-        app:layout_constraintVertical_bias="0.18" />
+        android:textColor="#1E750C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/resumo_datas_textview"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
