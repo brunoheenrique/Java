@@ -4,5 +4,11 @@
     <string name="stringListaEspeciais">Especiais</string>
     <string name="stringTextview2">Brasil</string>
     <string name="fundo_layout">""</string>
-    <string name="imagem_pacote">""</string>
+    <string name="lista_imagem_pacote">""</string>
+    <string name="resumo_imagem_pacote">""</string>
+    <string name="string_teste_1">São Paulo</string>
+    <string name="string_teste_2">2 dias</string>
+    <string name="string_teste_3">11/08 – 13/08 de 2022</string>
+    <string name="string_teste_4">Preço final:</string>
+    <string name="string_teste_5">R$ 243,99</string>
 </resources>

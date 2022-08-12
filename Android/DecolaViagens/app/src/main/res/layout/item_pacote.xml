@@ -26,7 +26,7 @@
                 android:id="@+id/item_imagem_pacote_1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/imagem_pacote"
+                android:contentDescription="@string/lista_imagem_pacote"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf='parent'
                 app:layout_constraintStart_toStartOf="parent"
