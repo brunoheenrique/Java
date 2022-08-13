@@ -77,7 +77,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/string_teste_6"
-        app:cornerRadius="10dp"
         android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
