@@ -71,4 +71,17 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/resumo_datas_textview"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/resumo_pacote_botao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_teste_6"
+        app:cornerRadius="10dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
