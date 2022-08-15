@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sao_paulo_sp" />
+        tools:srcCompat="@drawable/sao_paulo_sp" />
 
     <TextView
         android:id="@+id/resumo_local_textview"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/string_teste_1"
+        tools:text="@string/string_teste_1"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,20 +36,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/string_teste_2"
+        tools:text="@string/string_teste_2"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resumo_local_textview" />
 
     <TextView
         android:id="@+id/resumo_datas_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/string_teste_3"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/resumo_valor_final_textview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resumo_dias_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/resumo_dias_textview"
+        tools:text="@string/string_teste_3" />
 
     <TextView
         android:id="@+id/resumo_preco_final_textview"
@@ -63,24 +64,29 @@
 
     <TextView
         android:id="@+id/resumo_valor_final_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="@string/string_teste_5"
+        android:textAlignment="textEnd"
         android:textColor="#1E750C"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/resumo_datas_textview"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/resumo_datas_textview"
+        tools:text="@string/string_teste_5" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/resumo_pacote_botao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/string_teste_6"
         android:layout_margin="8dp"
+        android:background="@drawable/botao_laranja_arredondado"
+        android:text="@string/string_teste_6"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
