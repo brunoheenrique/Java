@@ -1,23 +1,20 @@
 package com.example.decolaviagens.ui.activity;
 
-import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.decolaviagens.R;
 import com.example.decolaviagens.model.Pacote;
+import com.example.decolaviagens.util.DataUtil;
 import com.example.decolaviagens.util.DiasUtil;
 import com.example.decolaviagens.util.MoedaUtil;
 import com.example.decolaviagens.util.ResourceUtil;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class ResumoPacoteActivity extends AppCompatActivity {
 
@@ -42,19 +39,8 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void mostraDataViagem(Pacote pacote) {
         TextView data = findViewById(R.id.resumo_datas_textview);
-        String dataFormatadaDaViagem = periodoEmTexto(pacote.getDias());
+        String dataFormatadaDaViagem = DataUtil.periodoEmTexto(pacote.getDias());
         data.setText(dataFormatadaDaViagem);
-    }
-
-    @NonNull
-    private String periodoEmTexto(int dias) {
-        Calendar dataIda = Calendar.getInstance();
-        Calendar dataVolta = Calendar.getInstance();
-        dataVolta.add(Calendar.DATE, dias);
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM");
-        String dataIdaFormatada = formatoBrasileiro.format(dataIda.getTime());
-        String dataVoltaFormatada = formatoBrasileiro.format(dataVolta.getTime());
-        return dataIdaFormatada + " - " + dataVoltaFormatada + " de " + dataVolta.get(Calendar.YEAR);
     }
 
     private void mostraPrecoFinal(Pacote pacote) {
