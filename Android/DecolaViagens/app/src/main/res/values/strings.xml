@@ -15,4 +15,5 @@
     <string name="pagamento_activity_descricao">Digite as informações de cartão de crédito
         que você deseja usar para o pagamento</string>
     <string name="valor_compra_pagamento_activity">Valor da compra:</string>
+    <string name="num_cartao_pagamento_editText">Número do cartão</string>
 </resources>

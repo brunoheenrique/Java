@@ -36,8 +36,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="24sp"
-        android:textColor="@color/dark_red"
+        android:textColor="@color/greenPriceColor"
         tools:text="@string/string_teste_5"
         app:layout_constraintStart_toStartOf="@+id/pagamento_valor_compra_textview"
         app:layout_constraintTop_toBottomOf="@+id/pagamento_valor_compra_textview" />
+
+    <EditText
+        android:id="@+id/pagamento_number_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:hint="@string/num_cartao_pagamento_editText"
+        android:inputType="number"
+        android:maxLength="12"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pagamento_valor_final_textview" />
 </androidx.constraintlayout.widget.ConstraintLayout>
