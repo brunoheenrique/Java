@@ -9,7 +9,7 @@
     <string name="string_teste_1">São Paulo</string>
     <string name="string_teste_2">2 dias</string>
     <string name="string_teste_3">11/08 – 13/08 de 2022</string>
-    <string name="string_teste_4">Preço final:</string>
+    <string name="string_preco_final">Preço final:</string>
     <string name="string_teste_5">R$ 243,99</string>
-    <string name="string_teste_6">Realizar pagamento</string>
+    <string name="string_realizar_pagamento">Realizar pagamento</string>
 </resources>

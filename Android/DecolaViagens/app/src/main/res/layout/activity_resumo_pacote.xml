@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.ResumoPacoteActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/resumo_pacote_imageview"
@@ -24,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_marginTop="8dp"
         tools:text="@string/string_teste_1"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -35,17 +33,17 @@
         android:id="@+id/resumo_dias_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         tools:text="@string/string_teste_2"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/resumo_local_textview"
         app:layout_constraintTop_toBottomOf="@+id/resumo_local_textview" />
 
     <TextView
         android:id="@+id/resumo_datas_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/resumo_valor_final_textview"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +54,7 @@
         android:id="@+id/resumo_preco_final_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/string_teste_4"
+        android:text="@string/string_preco_final"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/resumo_valor_final_textview"
         app:layout_constraintEnd_toEndOf="@+id/resumo_valor_final_textview" />
@@ -66,8 +63,10 @@
         android:id="@+id/resumo_valor_final_textview"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:textAlignment="textEnd"
+        android:gravity="end"
         android:textColor="#1E750C"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/resumo_datas_textview"
@@ -81,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/botao_laranja_arredondado"
-        android:text="@string/string_teste_6"
+        android:text="@string/string_realizar_pagamento"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
