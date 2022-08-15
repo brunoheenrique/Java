@@ -46,8 +46,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:autofillHints=""
-        android:hint="@string/num_cartao_pagamento_editText"
+        android:hint="@string/pagamento_numero_cartao"
         android:inputType="number"
         android:maxLength="12"
         android:minHeight="48dp"
@@ -55,4 +56,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pagamento_valor_final_textview" />
+
+    <EditText
+        android:id="@+id/pagamento_mes_cartao_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:hint="@string/pagamento_mes_cartao"
+        android:inputType="number"
+        android:maxLength="2"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="@id/pagamento_number_editText"
+        app:layout_constraintTop_toBottomOf="@id/pagamento_number_editText" />
+
+    <EditText
+        android:id="@+id/pagamento_ano_cartao_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:hint="@string/pagamento_ano_cartao"
+        android:inputType="number"
+        android:maxLength="2"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toEndOf="@id/pagamento_mes_cartao_editText"
+        app:layout_constraintTop_toBottomOf="@id/pagamento_number_editText" />
+
+    <EditText android:id="@+id/pagamento_cvv_cartao_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/pagamento_cvc_cartao"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:inputType="number"
+        android:textColorHint="#757575"
+        app:layout_constraintTop_toBottomOf="@id/pagamento_number_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

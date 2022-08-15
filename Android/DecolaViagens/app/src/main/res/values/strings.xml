@@ -12,8 +12,11 @@
     <string name="string_preco_final">Preço final:</string>
     <string name="string_teste_5">R$ 243,99</string>
     <string name="string_realizar_pagamento">Realizar pagamento</string>
-    <string name="pagamento_activity_descricao">Digite as informações de cartão de crédito
-        que você deseja usar para o pagamento</string>
+    <string name="pagamento_activity_descricao">Digite as informações de cartão de crédito que você deseja usar para o pagamento</string>
     <string name="valor_compra_pagamento_activity">Valor da compra:</string>
-    <string name="num_cartao_pagamento_editText">Número do cartão</string>
+    <string name="pagamento_numero_cartao">Número do cartão</string>
+    <string name="pagamento_mes_cartao">MM</string>
+    <string name="pagamento_ano_cartao">AA</string>
+    <string name="pagamento_cvc_cartao">CVC</string>
+    <string name="pagamento_nome_cartao">Nome no cartão</string>
 </resources>
