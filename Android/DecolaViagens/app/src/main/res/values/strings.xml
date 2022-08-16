@@ -20,4 +20,5 @@
     <string name="pagamento_cvc_cartao">CVC</string>
     <string name="pagamento_nome_cartao">Nome no cartão</string>
     <string name="string_finalizar_compra">Finalizar Compra</string>
+    <string name="mascara_nome_cartao">abcdefghijklmnopqrstuvwxyzçABCDEFGHIJKLMNOPQRSTUVWXYZ\u0020</string>
 </resources>

@@ -25,10 +25,12 @@ public class PagamentoActivity extends AppCompatActivity {
         Pacote pacoteSaoPaulo = new Pacote("São Paulo", "sao_paulo_sp",
                 2, new BigDecimal("243.99"));
 
+        mostraPreco(pacoteSaoPaulo);
+    }
+
+    private void mostraPreco(Pacote pacote) {
         TextView preco = findViewById(R.id.pagamento_valor_final_textview);
-        String moedaBrasileira = MoedaUtil.formataPreco(pacoteSaoPaulo.getPreco());
+        String moedaBrasileira = MoedaUtil.formataPreco(pacote.getPreco());
         preco.setText(moedaBrasileira);
-
-
     }
 }
