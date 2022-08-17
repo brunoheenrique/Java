@@ -12,4 +12,5 @@
     <color name="colorPrimaryDark">#4a0072</color>
     <color name="colorAccent">#ae52d4</color>
     <color name="greenPriceColor">#1E750C</color>
+    <color name="orange_dark">@android:color/holo_orange_dark</color>
 </resources>

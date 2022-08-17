@@ -23,6 +23,7 @@ public class ListaPacotesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_pacotes);
         setTitle(TITULOAPPBAR);
         configuraLista();
+
         Intent intent = new Intent(this, ResumoPacoteActivity.class);
         startActivity(intent);
     }
