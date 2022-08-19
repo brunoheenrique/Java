@@ -25,8 +25,8 @@ public class ListaNotasActivity extends AppCompatActivity {
 
     private List<Nota> notasDeExemplo() {
         NotaDAO dao = new NotaDAO();
-        dao.insere(new Nota("Primeira nota do cadernin","Ah vai se lasca n quero saber"),
-                new Nota("Segunda nota do cadernin","Man, tu é insistente na parada"));
+        dao.insere(new Nota("Primeira nota do cadernin", "Ah vai se lasca n quero saber"),
+                new Nota("Segunda nota do cadernin", "Man, tu é insistente na parada"));
         return dao.todos();
     }
 
