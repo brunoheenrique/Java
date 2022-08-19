@@ -7,7 +7,7 @@
     tools:context="com.br.ceep.views.activity.ListaNotasActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lista_notas_listview"
+        android:id="@+id/lista_notas_recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/lista_notas_insere_nota"
