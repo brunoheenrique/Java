@@ -3,7 +3,6 @@ package com.br.ceep.views.activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.br.ceep.R;
@@ -20,16 +19,23 @@ public class ListaNotasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_notas);
 
-        RecyclerView listaNotas = findViewById(R.id.lista_notas_recyclerview);
+        List<Nota> todasNotas = notasDeExemplo();
+        configuraRecyclerView(todasNotas);
+    }
 
+    private List<Nota> notasDeExemplo() {
         NotaDAO dao = new NotaDAO();
-        for(int i = 1; i<=10000;i++){
-            dao.insere(new Nota("Titulo "+ i ,"Vai a merda pacero " + i + "x"));
-        }
-        List<Nota> todasNotas = dao.todos();
+        dao.insere(new Nota("Primeira nota do cadernin","Ah vai se lasca n quero saber"),
+                new Nota("Segunda nota do cadernin","Man, tu é insistente na parada"));
+        return dao.todos();
+    }
 
-        listaNotas.setAdapter(new ListaNotasAdapter(this,todasNotas));
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        listaNotas.setLayoutManager(layoutManager);
+    private void configuraRecyclerView(List<Nota> todasNotas) {
+        RecyclerView listaNotas = findViewById(R.id.lista_notas_recyclerview);
+        configuraAdapter(todasNotas, listaNotas);
+    }
+
+    private void configuraAdapter(List<Nota> notas, RecyclerView listaNotas) {
+        listaNotas.setAdapter(new ListaNotasAdapter(this, notas));
     }
 }
