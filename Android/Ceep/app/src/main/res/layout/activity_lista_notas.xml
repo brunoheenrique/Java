@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.br.ceep.views.activity.ListaNotasActivity">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_notas_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -34,5 +34,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
