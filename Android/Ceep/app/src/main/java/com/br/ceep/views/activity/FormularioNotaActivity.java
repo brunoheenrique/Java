@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.br.ceep.R;
+import com.br.ceep.controller.NotaDAO;
+import com.br.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
 
@@ -28,7 +30,11 @@ public class FormularioNotaActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.menu_formulario_ic_salva){
             EditText titulo_nota = findViewById(R.id.formulario_nota_titulo);
-
+            EditText descricao_nota = findViewById(R.id.formulario_nota_descricao);
+            Nota notaCriada = new Nota(titulo_nota.getText().toString(),
+                    descricao_nota.getText().toString());
+            new NotaDAO().insere(notaCriada);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }
