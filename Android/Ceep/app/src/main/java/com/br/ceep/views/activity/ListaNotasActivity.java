@@ -1,5 +1,6 @@
 package com.br.ceep.views.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -16,12 +17,15 @@ import java.util.List;
 
 public class ListaNotasActivity extends AppCompatActivity {
 
+    private ListaNotasAdapter adapter;
+    private List<Nota> todasNotas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_notas);
 
-        List<Nota> todasNotas = notasDeExemplo();
+        todasNotas = notasDeExemplo();
         configuraRecyclerView(todasNotas);
 
         TextView InsereNota = findViewById(R.id.lista_notas_insere_nota);
@@ -32,11 +36,13 @@ public class ListaNotasActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onResume() {
         NotaDAO dao = new NotaDAO();
-        List<Nota> todasNotas = dao.todos();
-        configuraRecyclerView(todasNotas);
+        todasNotas.clear();
+        todasNotas.addAll(dao.todos());
+        adapter.notifyDataSetChanged();
         super.onResume();
     }
 
@@ -53,6 +59,7 @@ public class ListaNotasActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(List<Nota> notas, RecyclerView listaNotas) {
-        listaNotas.setAdapter(new ListaNotasAdapter(this, notas));
+        adapter = new ListaNotasAdapter(this, notas);
+        listaNotas.setAdapter(adapter);
     }
 }
