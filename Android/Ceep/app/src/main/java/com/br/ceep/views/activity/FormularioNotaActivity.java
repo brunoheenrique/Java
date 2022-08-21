@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.br.ceep.R;
-import com.br.ceep.controller.NotaDAO;
 import com.br.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
@@ -29,17 +28,30 @@ public class FormularioNotaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.menu_formulario_ic_salva){
-            EditText titulo_nota = findViewById(R.id.formulario_nota_titulo);
-            EditText descricao_nota = findViewById(R.id.formulario_nota_descricao);
-            Nota notaCriada = new Nota(titulo_nota.getText().toString(),
-                    descricao_nota.getText().toString());
-            new NotaDAO().insere(notaCriada);
-            Intent resultadoInsercao = new Intent();
-            resultadoInsercao.putExtra("nota",notaCriada);
-            setResult(2,resultadoInsercao);
+        if (isMenuSalvaItem(item)) {
+            Nota notaCriada = criaNota();
+            retornaNota(notaCriada);
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void retornaNota(Nota notaCriada) {
+        Intent resultadoInsercao = new Intent();
+        resultadoInsercao.putExtra("nota", notaCriada);
+        setResult(2, resultadoInsercao);
+    }
+
+    @NonNull
+    private Nota criaNota() {
+        EditText titulo_nota = findViewById(R.id.formulario_nota_titulo);
+        EditText descricao_nota = findViewById(R.id.formulario_nota_descricao);
+        Nota notaCriada = new Nota(titulo_nota.getText().toString(),
+                descricao_nota.getText().toString());
+        return notaCriada;
+    }
+
+    private boolean isMenuSalvaItem(@NonNull MenuItem item) {
+        return item.getItemId() == R.id.menu_formulario_ic_salva;
     }
 }

@@ -39,6 +39,7 @@ public class ListaNotasActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 1 && resultCode == 2 && (data != null && data.hasExtra("nota"))) {
             Nota notaRecebida = (Nota) data.getSerializableExtra("nota");
+            new NotaDAO().insere(notaRecebida);
             adapter.adiciona(notaRecebida);
         }
         super.onActivityResult(requestCode, resultCode, data);
