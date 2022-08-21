@@ -1,10 +1,10 @@
 package com.br.ceep.views.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,31 +18,34 @@ import java.util.List;
 public class ListaNotasActivity extends AppCompatActivity {
 
     private ListaNotasAdapter adapter;
-    private List<Nota> todasNotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_notas);
 
-        todasNotas = notasDeExemplo();
+        List<Nota> todasNotas = notasDeExemplo();
         configuraRecyclerView(todasNotas);
 
         TextView InsereNota = findViewById(R.id.lista_notas_insere_nota);
         InsereNota.setOnClickListener(view -> {
             Intent iniciaFormularioNota = new Intent(ListaNotasActivity.this,
                     FormularioNotaActivity.class);
-            startActivity(iniciaFormularioNota);
+            startActivityForResult(iniciaFormularioNota, 1);
         });
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1 && resultCode == 2 && (data != null && data.hasExtra("nota"))) {
+            Nota notaRecebida = (Nota) data.getSerializableExtra("nota");
+            adapter.adiciona(notaRecebida);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     @Override
     protected void onResume() {
-        NotaDAO dao = new NotaDAO();
-        todasNotas.clear();
-        todasNotas.addAll(dao.todos());
-        adapter.notifyDataSetChanged();
         super.onResume();
     }
 

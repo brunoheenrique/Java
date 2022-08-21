@@ -1,5 +1,6 @@
 package com.br.ceep.views.recycler.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,4 +64,11 @@ public class ListaNotasAdapter extends RecyclerView.Adapter<ListaNotasAdapter.No
         }
 
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void adiciona(Nota nota){
+        notas.add(nota);
+        notifyDataSetChanged();
+    }
+
 }
