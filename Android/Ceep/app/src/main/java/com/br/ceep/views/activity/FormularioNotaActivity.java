@@ -14,6 +14,9 @@ import com.br.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
 
+    public static final String CHAVE_NOTA = "nota";
+    public static final int CODIGO_RESULTADO_NOTA_CRIADA = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +41,8 @@ public class FormularioNotaActivity extends AppCompatActivity {
 
     private void retornaNota(Nota notaCriada) {
         Intent resultadoInsercao = new Intent();
-        resultadoInsercao.putExtra("nota", notaCriada);
-        setResult(2, resultadoInsercao);
+        resultadoInsercao.putExtra(CHAVE_NOTA, notaCriada);
+        setResult(CODIGO_RESULTADO_NOTA_CRIADA, resultadoInsercao);
     }
 
     @NonNull
