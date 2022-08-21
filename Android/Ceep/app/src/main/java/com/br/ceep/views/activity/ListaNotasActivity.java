@@ -24,15 +24,25 @@ public class ListaNotasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_notas);
 
-        List<Nota> todasNotas = notasDeExemplo();
+        List<Nota> todasNotas = listaTodasNotas();
         configuraRecyclerView(todasNotas);
+        configuraToqueInsereNota();
+    }
 
+    private void configuraToqueInsereNota() {
         TextView InsereNota = findViewById(R.id.lista_notas_insere_nota);
-        InsereNota.setOnClickListener(view -> {
-            Intent iniciaFormularioNota = new Intent(ListaNotasActivity.this,
-                    FormularioNotaActivity.class);
-            startActivityForResult(iniciaFormularioNota, 1);
-        });
+        InsereNota.setOnClickListener(view -> vaiParaFormularioNotaActivity());
+    }
+
+    private void vaiParaFormularioNotaActivity() {
+        Intent iniciaFormularioNota = new Intent(ListaNotasActivity.this,
+                FormularioNotaActivity.class);
+        startActivityForResult(iniciaFormularioNota, 1);
+    }
+
+    private List<Nota> listaTodasNotas() {
+        NotaDAO dao = new NotaDAO();
+        return dao.todos();
     }
 
     @Override
@@ -44,17 +54,9 @@ public class ListaNotasActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-    }
-
-    private List<Nota> notasDeExemplo() {
-        NotaDAO dao = new NotaDAO();
-        dao.insere(new Nota("Primeira nota do cadernin", "Nota"),
-                new Nota("Segunda nota do cadernin", "Nota"));
-        return dao.todos();
     }
 
     private void configuraRecyclerView(List<Nota> todasNotas) {
