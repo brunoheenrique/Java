@@ -1,5 +1,8 @@
 package com.br.ceep.views.activity;
 
+import static com.br.ceep.views.activity.NotasActivityConstants.CHAVE_NOTA;
+import static com.br.ceep.views.activity.NotasActivityConstants.CODIGO_RESULTADO_NOTA_CRIADA;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,9 +16,6 @@ import com.br.ceep.R;
 import com.br.ceep.model.Nota;
 
 public class FormularioNotaActivity extends AppCompatActivity {
-
-    public static final String CHAVE_NOTA = "nota";
-    public static final int CODIGO_RESULTADO_NOTA_CRIADA = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

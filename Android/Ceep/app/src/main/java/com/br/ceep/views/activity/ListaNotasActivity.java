@@ -1,5 +1,7 @@
 package com.br.ceep.views.activity;
 
+import static com.br.ceep.views.activity.NotasActivityConstants.CODIGO_REQUISICAO_INSERE_NOTA;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -37,7 +39,7 @@ public class ListaNotasActivity extends AppCompatActivity {
     private void vaiParaFormularioNotaActivity() {
         Intent iniciaFormularioNota = new Intent(ListaNotasActivity.this,
                 FormularioNotaActivity.class);
-        startActivityForResult(iniciaFormularioNota, 1);
+        startActivityForResult(iniciaFormularioNota, CODIGO_REQUISICAO_INSERE_NOTA);
     }
 
     private List<Nota> listaTodasNotas() {
